@@ -113,7 +113,7 @@ class MainApplication(tk.Frame):
     def Prev_Track(self):
         Playlist.trackNum -= 1
         if ('B' + str(Playlist.trackNum)) == 'B1':
-            Playlist.trackNum = int(Playlist.FirstEmpty[-1:]) - 1
+            Playlist.trackNum = int(Playlist.FirstEmpty[1:]) - 1
             pass
         else:
             pass
@@ -129,7 +129,7 @@ class MainApplication(tk.Frame):
         self.CurrentTrack.set(str(Playlist.wb[Playlist.wb.sheetnames[Playlist.playNum]]['B' + str(Playlist.trackNum)].value)[:-4])
         self.CurrentPlaylist.set('Current Playlist: ' + Playlist.wb.sheetnames[Playlist.playNum])
 
-        if (Playlist.trackNum + 1) == int(Playlist.FirstEmpty[-1:]):
+        if (Playlist.trackNum + 1) == int(Playlist.FirstEmpty[1:]):
             self.NextTrack.set(str(Playlist.wb[Playlist.wb.sheetnames[Playlist.playNum]]['B2'].value)[:-4])
             pass
         else:
